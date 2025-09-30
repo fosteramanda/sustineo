@@ -14,6 +14,8 @@ from api.storage import save_image_blobs, save_video_blob
 from api.agent.common import execute_foundry_agent, post_request
 
 
+
+
 AZURE_IMAGE_DEPLOYMENT = os.environ.get("AZURE_IMAGE_DEPLOYMENT", "EMPTY")
 AZURE_IMAGE_ENDPOINT = os.environ.get("AZURE_IMAGE_ENDPOINT", "EMPTY").rstrip("/")
 AZURE_IMAGE_API_KEY = os.environ.get("AZURE_IMAGE_API_KEY", "EMPTY")
