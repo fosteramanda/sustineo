@@ -77,7 +77,7 @@ export async function loader({ params }: Route.LoaderArgs) {
   // For example, you might want to fetch user data or initial settings
   const design: Design = {
     id: "default",
-    background: "/images/background.jpg",
+    background: "/images/background.svg",
     default: true,
     logo: "",
     title: "BuildEvents",

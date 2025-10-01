@@ -58,20 +58,20 @@ jobs:
                               --environment contoso-concierge-env \
                               --workload-profile-name heavy-workload \
                               --env-vars "APP_VERSION=${TAG}" \
-                                "AZURE_OPENAI_ENDPOINT=secretref:azure-openai-endpoint" \
-                                "AZURE_OPENAI_API_KEY=secretref:azure-openai-api-key" \
-                                "AZURE_VOICE_ENDPOINT=secretref:azure-voice-endpoint" \
-                                "AZURE_VOICE_KEY=secretref:azure-voice-key" \
-                                "APPINSIGHTS_CONNECTIONSTRING=secretref:appinsights-connectionstring" \
-                                "COSMOSDB_CONNECTION=secretref:cosmosdb-connection" \
-                                "FOUNDRY_CONNECTION=secretref:foundry-connection" \
-                                "AZURE_IMAGE_DEPLOYMENT=secretref:azure-image-deployment" \
-                                "AZURE_IMAGE_ENDPOINT=secretref:azure-image-endpoint" \
-                                "AZURE_IMAGE_API_KEY=secretref:azure-image-api-key" \
-                                "SUSTINEO_STORAGE=secretref:sustineo-storage" \
-                                "AZURE_SORA_ENDPOINT=secretref:azure-sora-endpoint" \
-                                "AZURE_SORA_API_KEY=secretref:azure-sora-api-key" \
-                                "BASE_URL=secretref:base-url" \
+                                "AZURE_OPENAI_ENDPOINT=https://placeholder.openai.azure.com" \
+                                "AZURE_OPENAI_API_KEY=placeholder-openai-key" \
+                                "AZURE_VOICE_ENDPOINT=https://placeholder.cognitiveservices.azure.com" \
+                                "AZURE_VOICE_KEY=placeholder-voice-key" \
+                                "APPINSIGHTS_CONNECTIONSTRING=InstrumentationKey=placeholder-key" \
+                                "COSMOSDB_CONNECTION=AccountEndpoint=https://placeholder.documents.azure.com:443/" \
+                                "FOUNDRY_CONNECTION=placeholder-foundry-connection" \
+                                "AZURE_IMAGE_DEPLOYMENT=placeholder-image-deployment" \
+                                "AZURE_IMAGE_ENDPOINT=https://placeholder.cognitiveservices.azure.com" \
+                                "AZURE_IMAGE_API_KEY=placeholder-image-key" \
+                                "SUSTINEO_STORAGE=DefaultEndpointsProtocol=https;AccountName=placeholder" \
+                                "AZURE_SORA_ENDPOINT=https://placeholder.openai.azure.com" \
+                                "AZURE_SORA_API_KEY=placeholder-sora-key" \
+                                "BASE_URL=https://placeholder-base-url.com" \
                                 "LOCAL_TRACING_ENABLED=false"
 
       - name: Logout

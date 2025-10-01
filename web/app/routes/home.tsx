@@ -15,10 +15,10 @@ export async function loader({ params }: Route.LoaderArgs) {
   // For example, you might want to fetch user data or initial settings
   const design: Design = {
     id: "default",
-    background: "/images/background.jpg",
+    background: "/images/background.svg",
     default: true,
     logo: "",
-    title: "BuildEvents",
+    title: "GitHub Pop-Up Store",
     sub_title: "by Contoso",
     description: "Making Things Happen since 1935",
   };
@@ -29,11 +29,11 @@ export async function loader({ params }: Route.LoaderArgs) {
 export function meta({ data }: Route.MetaArgs) {
   if (!data) {
     return [
-      { title: "BuildEvents by Contoso" },
+      { title: "GitHub Pop-Up Store" },
       { name: "description", content: "Making Things Happen since 1935" },
     ];
   }
-  const title = `${data["title"] || "BuildEvents"} ${
+  const title = `${data["title"] || "GitHub Pop-Up Store"} ${
     data["sub_title"] || "by Contoso"
   }`;
   const description = data["description"] || "Making Things Happen since 1935";
