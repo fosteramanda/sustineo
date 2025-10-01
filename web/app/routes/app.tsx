@@ -80,8 +80,8 @@ export async function loader({ params }: Route.LoaderArgs) {
     background: "/images/background.svg",
     default: true,
     logo: "",
-    title: "BuildEvents",
-    sub_title: "by Contoso",
+    title: "GitHub Pop-Up Store",
+    sub_title: "by Zava",
     description: "Making Things Happen since 1935",
   };
 
@@ -91,7 +91,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 export function meta({ data }: Route.MetaArgs) {
   if (!data) {
     return [
-      { title: "BuildEvents by Contoso" },
+      { title: "GitHub Pop-Up Store" },
       { name: "description", content: "Making Things Happen since 1935" },
     ];
   }
