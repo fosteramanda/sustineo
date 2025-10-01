@@ -19,10 +19,10 @@ const availableUsers: { [key: string]: string } = {
 };
 
 const defaultUser: User = {
-  key: "seth-juarez",
-  name: "Seth Juarez",
-  email: "seth.juarez@microsoft.com",
-  avatar: "/images/people/seth-juarez.jpg",
+  key: "amanda-foster",
+  name: "Amanda Foster",
+  email: "fosteramanda@microsoft.com",
+  avatar: "/images/people/amanda-foster.jpg",
 };
 
 const getUser = async (): Promise<User> => {
