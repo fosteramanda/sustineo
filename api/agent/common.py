@@ -68,8 +68,8 @@ def get_client_agents() -> dict[str, Agent]:
 async def get_foundry_project_client():
     """Get a context manager for the Foundry project client."""
     creds = DefaultAzureCredential()
-    project_client = AIProjectClient.from_connection_string(
-        conn_str=FOUNDRY_CONNECTION, credential=creds
+    project_client = AIProjectClient(
+        endpoint=FOUNDRY_CONNECTION, credential=creds
     )
     try:
         yield project_client
