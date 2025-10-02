@@ -3,7 +3,7 @@ import json
 from typing import Any, Union
 from prompty.tracer import trace
 
-from azure.ai.projects.models import (
+from azure.ai.agents.models import (
     AsyncAgentEventHandler,
     RunStep,
     ThreadMessage,

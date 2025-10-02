@@ -8,10 +8,11 @@ from typing import AsyncGenerator, Union, Unpack, Any
 from aiohttp.client import _RequestOptions
 
 from azure.ai.projects.aio import AIProjectClient
-from azure.ai.projects.models import (
-    MessageInputContentBlock,
-    MessageAttachment,
-)
+#from azure.ai.projects.models import (
+ #   MessageInputContentBlock,
+ #   MessageAttachment,
+#)
+from azure.ai.agents.models import MessageInputContentBlock, MessageAttachment
 
 from azure.identity.aio import DefaultAzureCredential
 from prompty.core import Prompty
@@ -131,15 +132,15 @@ async def execute_foundry_agent(
 
     async with get_foundry_project_client() as project_client:
         server_agent = await project_client.agents.get_agent(agent_id)
-        thread = await project_client.agents.create_thread()
-        await project_client.agents.create_message(
+        thread = await project_client.agents.threads.create()
+        await project_client.agents.messages.create(
             thread_id=thread.id,
             role="user",
             content=query,
         )
 
         handler = SustineoAgentEventHandler(project_client, tools, notify)
-        async with await project_client.agents.create_stream(
+        async with await project_client.agents.runs.stream(
             agent_id=server_agent.id,
             thread_id=thread.id,
             additional_instructions=additional_instructions,
@@ -151,7 +152,7 @@ async def execute_foundry_agent(
 @trace
 async def create_foundry_thread():
     async with get_foundry_project_client() as project_client:
-        thread = await project_client.agents.create_thread()
+        thread = await project_client.agents.threads.create()
         return thread.id
 
 
@@ -163,7 +164,7 @@ async def create_thread_message(
     metadata: dict[str, str] = {},
 ):
     async with get_foundry_project_client() as project_client:
-        message = await project_client.agents.create_message(
+        message = await project_client.agents.messages.create(
             thread_id=thread_id,
             role=role,
             content=content,
