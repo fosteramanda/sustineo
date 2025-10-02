@@ -15,7 +15,7 @@ export async function loader({ params }: Route.LoaderArgs) {
   // For example, you might want to fetch user data or initial settings
   const design: Design = {
     id: "default",
-    background: "/images/background.svg",
+    background: "/images/GitHubStore.png",
     default: true,
     logo: "",
     title: "GitHub Pop-Up Store",
